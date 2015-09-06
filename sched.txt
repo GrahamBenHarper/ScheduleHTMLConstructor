@@ -1,0 +1,14 @@
+<table class="schedule">
+<thead>
+	<tr class="head">
+		<td></td>
+		<td>Monday</td>
+		<td>Tuesday</td>
+		<td>Wednesday</td>
+		<td>Thursday</td>
+		<td>Friday</td>
+	<	r>
+<	head>
+<tbody>
+	<tr class="even">
+		<td>8:00</td>
