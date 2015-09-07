@@ -16,9 +16,9 @@ public class ScheduleHTMLConstructor
         // Initialize the schedule
         String[][] scheduleContent = buildSchedule(SCH_WEEKEND, SCH_TIME);
         
-        writeScheduleToFile(scheduleContent, SCH_WEEKEND, SCH_TIME);
+        String fileName = writeScheduleToFile(scheduleContent, SCH_WEEKEND, SCH_TIME);
         
-        System.out.println("Done");
+        System.out.println("The file "+fileName+" has been successfully written.");
     }
     
     
@@ -119,12 +119,12 @@ public class ScheduleHTMLConstructor
         
         boolean[] bdays = {false,false,false,false,false,false,false};
         Scanner in = new Scanner(System.in);
-        String[] SCH_DAYS = {"Su","M","T","W","Th","F","Sa"};
+        String[] SCH_DAYS = {"Su","M","Tu","W","Th","F","Sa"};
         String[][] scheduleContent = new String [5+2*weekends][24*(1+increments)];
         
         while(cont)
         {
-            System.out.println("Please enter the days of the week of the commitment (Enter a string with no spaces containing Su, M, T, W, Th, F, or Sa)");
+            System.out.println("Please enter the days of the week of the commitment (Enter a string with no spaces containing Su, M, Tu, W, Th, F, or Sa)");
             days = in.next();
             System.out.println("Please enter the starting hour of the commitment. (Give an hour in military time)");
             startT = in.next();
@@ -151,17 +151,17 @@ public class ScheduleHTMLConstructor
                     bdays[i] = false;
             }
             
-            for(int i=0;i<5+2*weekends; i++)
+            for(int i=1-weekends;i<6+1*weekends; i++)
             {
                 if(bdays[i] && increments==0)  
                 {
                     for(int j=Integer.valueOf(startT); j<Integer.valueOf(endT); j++)
-                        scheduleContent[i][j] = commitment;
+                        scheduleContent[i-1+weekends][j] = commitment;
                 }
                 else if(bdays[i] && increments==1)
                 {
                     for(int j=Integer.valueOf(startT)+(startHalf ? 1 : 0); j<Integer.valueOf(endT)+(startHalf ? 1 : 0); j++)
-                        scheduleContent[i][j] = commitment;
+                        scheduleContent[i-1+weekends][j] = commitment;
                 }
             }
             
@@ -175,7 +175,7 @@ public class ScheduleHTMLConstructor
     
     //--------------------------------------------------------------------------------------------------
     //-------------WriteSch-----------------------------------------------------------------------------
-    public static void writeScheduleToFile(String[][] scheduleContent, int weekends, int increments) throws FileNotFoundException
+    public static String writeScheduleToFile(String[][] scheduleContent, int weekends, int increments) throws FileNotFoundException
     {
         Scanner in = new Scanner(System.in);
         String fileName = new String();
@@ -194,9 +194,9 @@ public class ScheduleHTMLConstructor
         
         System.out.println("Please wait while the file is created.");
         
-        
-        
-        
+        // Begin writing to the file
+        output.println("<!-- This file was created by Graham Harper's java HTML schedule table generator -->");
+        output.println("<!-- If this program has made your HTML coding easier, please star it on Github  -->");
         output.println("<table class=\"schedule\">");
         output.println("<thead>");
         output.println("\t<tr class=\"head\">");
@@ -211,8 +211,8 @@ public class ScheduleHTMLConstructor
             for(String day : new String[] {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"})
                 output.println("\t\t<td>"+day+"</td>");
         }
-        output.println("\t<\tr>");
-        output.println("<\thead>");
+        output.println("\t</tr>");
+        output.println("</thead>");
         output.println("<tbody>");
         
         for(int i = startH*(1+increments); i<endH*(1+increments); i++)
@@ -223,11 +223,11 @@ public class ScheduleHTMLConstructor
                 output.println("\t<tr class=\"odd\">");
             
             output.println("\t\t<td>"+((i-1)%12+1)+":00</td>");
-            
+
             for(int j=0;j<(5+2*weekends);j++)
             {
-                if(scheduleContent[i][j]!=null)
-                    output.println("\t\t<td>"+scheduleContent[i][j]+"</td>");
+                if(scheduleContent[j][i]!=null)
+                    output.println("\t\t<td>"+scheduleContent[j][i]+"</td>");
                 else
                     output.println("\t\t<td></td>");
             }
@@ -237,5 +237,8 @@ public class ScheduleHTMLConstructor
         
         output.println("</tbody>");
         output.println("</table>");
+        output.close();
+        
+        return (fileName+".txt");
     }
 }
