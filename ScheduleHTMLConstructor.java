@@ -124,24 +124,24 @@ public class ScheduleHTMLConstructor
         
         while(cont)
         {
-            System.out.println("Please enter the days of the week of the commitment (Enter a string with no spaces containing Su, M, Tu, W, Th, F, or Sa)");
-            days = in.next();
+            System.out.println("Please enter the days of the week of the commitment (Enter a string containing Su, M, Tu, W, Th, F, or Sa)");
+            days = in.nextLine();
             System.out.println("Please enter the starting hour of the commitment. (Give an hour in military time)");
-            startT = in.next();
+            startT = in.nextLine();
             if(increments==1)
             {
                 System.out.println("Is this a half-hour? (y/n)");
-                startHalf = in.next().equals("y");
+                startHalf = in.nextLine().equals("y");
             }
             System.out.println("Please enter the ending hour of the commitment. (Give an hour in military time)");
-            endT = in.next();
+            endT = in.nextLine();
             if(increments==1)
             {
                 System.out.println("Is this a half-hour? (y/n)");
-                endHalf = in.next().equals("y");
+                endHalf = in.nextLine().equals("y");
             }
-            System.out.println("Please enter the title of the commitment. (No spaces please)");
-            commitment = in.next();
+            System.out.println("Please enter the title of the commitment.");
+            commitment = in.nextLine();
             
             for(int i=1-weekends; i<6+weekends; i++) // Don't check SaSu if the schedule has no weekends
             {
@@ -166,7 +166,7 @@ public class ScheduleHTMLConstructor
             }
             
             System.out.println("Would you like to continue adding to the schedule? (y/n)");
-            yn = in.next();
+            yn = in.nextLine();
             if(!yn.equals("y"))
                 cont=false;
         }
