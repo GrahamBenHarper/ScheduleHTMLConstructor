@@ -160,7 +160,7 @@ public class ScheduleHTMLConstructor
                 }
                 else if(bdays[i] && increments==1)
                 {
-                    for(int j=Integer.valueOf(startT)+(startHalf ? 1 : 0); j<Integer.valueOf(endT)+(startHalf ? 1 : 0); j++)
+                    for(int j=2*Integer.valueOf(startT)+(startHalf ? 1 : 0); j<2*Integer.valueOf(endT)+(startHalf ? 1 : 0); j++)
                         scheduleContent[i-1+weekends][j] = commitment;
                 }
             }
@@ -222,7 +222,16 @@ public class ScheduleHTMLConstructor
             else
                 output.println("\t<tr class=\"odd\">");
             
-            output.println("\t\t<td>"+((i-1)%12+1)+":00</td>");
+            if(increments==0)
+                output.println("\t\t<td>"+((i-1)%12+1)+":00</td>");
+            else
+            {
+                if(i%2==0)
+                    output.println("\t\t<td>"+((i/2-1)%12+1)+":00</td>");
+                else
+                    output.println("\t\t<td>"+(((i-1)/2-1)%12+1)+":30</td>");
+                
+            }
 
             for(int j=0;j<(5+2*weekends);j++)
             {

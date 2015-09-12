@@ -1,0 +1,198 @@
+<!-- This file was created by Graham Harper's java HTML schedule table generator -->
+<!-- If this program has made your HTML coding easier, please star it on Github  -->
+<table class="schedule">
+<thead>
+	<tr class="head">
+		<td></td>
+		<td>Sunday</td>
+		<td>Monday</td>
+		<td>Tuesday</td>
+		<td>Wednesday</td>
+		<td>Thursday</td>
+		<td>Friday</td>
+		<td>Saturday</td>
+	</tr>
+</thead>
+<tbody>
+	<tr class="even">
+		<td>8:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="odd">
+		<td>8:30</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="even">
+		<td>9:00</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+	</tr>
+	<tr class="odd">
+		<td>9:30</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td>Meetings</td>
+		<td>Class</td>
+		<td></td>
+	</tr>
+	<tr class="even">
+		<td>10:00</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td>Meetings</td>
+		<td>Class</td>
+		<td></td>
+	</tr>
+	<tr class="odd">
+		<td>10:30</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td>Tea</td>
+		<td>Class</td>
+		<td></td>
+	</tr>
+	<tr class="even">
+		<td>11:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Tea</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="odd">
+		<td>11:30</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="even">
+		<td>12:00</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+	</tr>
+	<tr class="odd">
+		<td>12:30</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+		<td>Class</td>
+		<td></td>
+	</tr>
+	<tr class="even">
+		<td>1:00</td>
+		<td>Study</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Study</td>
+	</tr>
+	<tr class="odd">
+		<td>1:30</td>
+		<td>Study</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Study</td>
+	</tr>
+	<tr class="even">
+		<td>2:00</td>
+		<td>Study</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Study</td>
+	</tr>
+	<tr class="odd">
+		<td>2:30</td>
+		<td>Study</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Study</td>
+	</tr>
+	<tr class="even">
+		<td>3:00</td>
+		<td>Study</td>
+		<td>Work</td>
+		<td>Work</td>
+		<td>Work</td>
+		<td></td>
+		<td>Work</td>
+		<td>Study</td>
+	</tr>
+	<tr class="odd">
+		<td>3:30</td>
+		<td>Study</td>
+		<td>Work</td>
+		<td>Work</td>
+		<td>Work</td>
+		<td></td>
+		<td>Work</td>
+		<td>Study</td>
+	</tr>
+	<tr class="even">
+		<td>4:00</td>
+		<td>Study</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Study</td>
+	</tr>
+	<tr class="odd">
+		<td>4:30</td>
+		<td>Study</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Study</td>
+	</tr>
+</tbody>
+</table>
